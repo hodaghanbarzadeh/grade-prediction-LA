@@ -13,3 +13,10 @@ def meanOfDataWith2Groupping(dataset,targetField,grouppingField1,grouppingField2
             group2.append({'key':str(vf2),'val':listOfG2[targetField].mean()})
         group1.append({'key':str(vf1),'val':group2})
     return group1
+
+def frequenceData(dataset,targetField):
+    freq=dataset.groupby(targetField).size()
+    sums=[]
+    for v in freq.index:
+        sums.append({'key':str(v),'val':int(freq[v])})
+    return sums

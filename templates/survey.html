@@ -32,7 +32,9 @@
           </a>
           <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/analytics">Over view</a>
-            <a class="dropdown-item" href="analyz-scatterplott.html">Scatter plot</a>
+            <a class="dropdown-item" href="/analytics_pie_freq">Pie plot</a>
+          </div>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
@@ -64,12 +66,14 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label for="customRange">Level your travel time</label><br>
-              <input type="range" class="custom-range" id="customTravelTime" name="travelTime" min="1" max="5" required><br>
+              <input type="range" class="custom-range" id="customTravelTime" name="travelTime" min="1" max="5"
+                required><br>
             </div>
 
             <div class="row pt-3 pl-2 pr-2">
               <label for="customRange">Level your travel time</label><br>
-              <input type="range" class="custom-range" id="customStudyTime" name="studyTime" min="1" max="5" required><br>
+              <input type="range" class="custom-range" id="customStudyTime" name="studyTime" min="1" max="5"
+                required><br>
             </div>
 
             <div class="row pt-3 pl-2 pr-2">
@@ -153,7 +157,8 @@
 
             <div class="row pt-3 pl-2 pr-2">
               <label for="customRange">Absent</label><br>
-              <input type="range" class="custom-range" id="customAbsences" name="absences" min="0" max="4" required><br><br>
+              <input type="range" class="custom-range" id="customAbsences" name="absences" min="0" max="4"
+                required><br><br>
             </div>
 
 
@@ -167,7 +172,7 @@
         <div id="resultbox" class="container result-content">
           <h2>your predicted grade is </h2>
           <span class="title">Based on regression :</span> <span class="val lr"></span><br>
-          
+
           <span class="title">Based on k-nearest-neighbor :</span> <span class="val knn"></span>
         </div>
       </div>

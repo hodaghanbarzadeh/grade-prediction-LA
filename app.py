@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, request, url_for,jsonify,json
 from werkzeug.utils import redirect
 from loaddata import loadTrainData ,loadDataset
 from predict import prepareML,calcPredict
-from dataanalyze import meanOfDataWith2Groupping
+from dataanalyze import meanOfDataWith2Groupping,frequenceData
 # App config.
 DEBUG = True
 app = Flask(__name__)
@@ -40,11 +40,22 @@ def about():
 def analytics():
     return render_template('analytics.html')
 
+@app.route('/analytics_pie_freq')
+def analytics_pie_freq():
+    return render_template('analytics-pie-freq.html')
+
 @app.route('/analyze_study_and_travel_time')
 def studyTravelTimeCompare():
     chart1=meanOfDataWith2Groupping(dataset,'grade','sex','studytime')
     chart2=meanOfDataWith2Groupping(dataset,'grade','sex','traveltime')
     dataCharts={'chart1':chart1,'chart2':chart2}
+    return jsonify(dataCharts)
+
+@app.route('/analyze_freq')
+def frequence():
+    fieldName=request.args.get('fieldName')
+    chart=frequenceData(dataset,fieldName)
+    dataCharts={'chart':chart}
     return jsonify(dataCharts)
 
 @app.route('/survey')
