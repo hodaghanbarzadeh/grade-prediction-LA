@@ -1,14 +1,15 @@
 from flask import Flask, render_template, flash, request, url_for,jsonify,json
 from werkzeug.utils import redirect
-from loaddata import loadTrainData 
+from loaddata import loadTrainData ,loadDataset
 from predict import prepareML,calcPredict
+from dataanalyze import meanOfDataWith2Groupping
 # App config.
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 # app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
-
-x_train,y_train=loadTrainData('dataset_stu','grade')
+dataset=loadDataset('dataset_stu')
+x_train,y_train=loadTrainData(dataset.copy(),'grade')
 
 lr=prepareML('lr',x_train,y_train)
 
@@ -22,6 +23,17 @@ def main():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/analytics')
+def analytics():
+    return render_template('analytics.html')
+
+@app.route('/analyze_study_and_travel_time')
+def studyTravelTimeCompare():
+    chart1=meanOfDataWith2Groupping(dataset,'grade','sex','studytime')
+    chart2=meanOfDataWith2Groupping(dataset,'grade','sex','traveltime')
+    dataCharts={'chart1':chart1,'chart2':chart2}
+    return jsonify(dataCharts)
 
 @app.route('/survey')
 def survey():

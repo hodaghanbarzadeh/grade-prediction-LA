@@ -63,6 +63,13 @@ body{
     background-color: #00000094;
 }
 
+.analytic > h2
+{
+    text-align: center;
+    text-shadow:rgb(139, 129, 129);
+    font-size: medium;
+}
+
 .analytic .x.axis text {
     fill: white;
 }
