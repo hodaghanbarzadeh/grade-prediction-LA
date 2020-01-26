@@ -7,9 +7,21 @@ from dataanalyze import meanOfDataWith2Groupping
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
-# app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
+
 dataset=loadDataset('dataset_stu')
-x_train,y_train=loadTrainData(dataset.copy(),'grade')
+
+
+def converGrade20toGrade4(grade):
+    if grade >=17:
+        return 'very good'
+    elif grade < 17 and grade >= 15:
+        return 'good'
+    elif grade < 15 and grade >= 10:
+        return 'average'
+    elif grade < 10:
+        return 'bad'
+
+x_train,y_train=loadTrainData(dataset.copy(),'grade',converGrade20toGrade4)
 
 lr=prepareML('lr',x_train,y_train)
 

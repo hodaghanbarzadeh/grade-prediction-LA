@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 def loadDataset(datasetName):
     return pd.read_csv("./static/data/"+datasetName +".csv", engine='python',sep=',')
 
-def loadTrainData(dataset,classifiedField):
+def loadTrainData(dataset,classifiedField,checkClassifiedData):
 #read data
 
 
@@ -16,17 +16,12 @@ def loadTrainData(dataset,classifiedField):
     labels = []
 
     for grade in grades:
-        if grade >=17:
-            labels.append('very good')
-        elif grade < 17 and grade >= 15:
-            labels.append('good')
-        elif grade < 15 and grade >= 10:
-            labels.append('average')
-        elif grade < 10:
-            labels.append('bad')
+        labels.append(checkClassifiedData(grade))
+        
 
     #encoding the data
     enc = LabelEncoder()
+
     for item in dataset:
         data_raw = dataset[item].values
         dataset[item] = enc.fit_transform(data_raw)
