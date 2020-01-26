@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Survy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+  <link rel="stylesheet" href="static/css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="static/image/logo.png" width="40" height="40">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/survey">Survey</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Analytic
+          </a>
+          <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="analytics.html">Over view</a>
+            <a class="dropdown-item" href="analyz-scatterplott.html">Scatter plot</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+    </div>
+  </nav>
+
+  <div class="container-fluid body">
+    <div class="row justify-content-between fit-parent">
+      <div class="col-5 fit-parent">
+        <div class="container main-content ">
+          <form action="#">
+            <div class="row pt-3 pl-2 pr-2">
+              <h4><label>Fillout the form and get your predicate grade</label></h4>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Sex</label>
+              <select name="sex" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="0">M</option>
+                <option value="1">F</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Select your age</label><br>
+              <input type="range" class="custom-range" id="customAge" name="age" min="15" max="21" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Level your travel time</label><br>
+              <input type="range" class="custom-range" id="customTravelTime" name="travelTime" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Level your travel time</label><br>
+              <input type="range" class="custom-range" id="customStudyTime" name="studyTime" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">No of Failures</label><br>
+              <input type="range" class="custom-range" id="customFailures" name="failures" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Is SchoolsUp</label>
+              <select name="schoolsup" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Is FamsUp</label>
+              <select name="famsup" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Is Paid</label>
+              <select name="paid" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Is active</label>
+              <select name="activities" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Is heigher</label>
+              <select name="higher" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label>Internet</label>
+              <select name="internet" class="custom-select mb-3 select-size font" required>
+                <option selected></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Level of farmel</label><br>
+              <input type="range" class="custom-range" id="customFamrel" name="famrel" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Quantity of freetime</label><br>
+              <input type="range" class="custom-range" id="customFreetime" name="freetime" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Goout</label><br>
+              <input type="range" class="custom-range" id="customGoout" name="goout" min="1" max="5" required><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Level of health</label><br>
+              <input type="range" class="custom-range" id="customHealth" name="health" min="1" max="5" required><br><br>
+            </div>
+
+            <div class="row pt-3 pl-2 pr-2">
+              <label for="customRange">Absent</label><br>
+              <input type="range" class="custom-range" id="customAbsences" name="absences" min="0" max="4" required><br><br>
+            </div>
+
+
+            <div class="row pt-3 pl-2 pr-2 justify-content-center">
+              <button id="predictbtn" type="submit" class="btn btn-primary">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-4">
+        <div id="resultbox" class="container result-content">
+          <p>your predicted grade is </p>
+          <span class="title">Based on regression :</span> <span class="val lr"></span>
+          <span class="title">Based on k-nearest-neighbor :</span> <span class="val knn"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script/script.js"></script>
+</body>
+
+</html>
